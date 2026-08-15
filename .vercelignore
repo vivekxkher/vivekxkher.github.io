@@ -1,0 +1,13 @@
+# Screenshots and audit output — generated locally, never part of a deploy.
+tools/shots
+
+# Local build output. The host builds its own.
+.next
+out
+
+node_modules
+
+# Editor and agent scratch
+.agents
+.claude
+.mcp.json

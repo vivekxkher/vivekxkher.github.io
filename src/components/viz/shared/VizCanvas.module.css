@@ -1,0 +1,16 @@
+.wrap {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-canvas);
+}
+
+.wrap canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  touch-action: pan-y;
+}
+
+.wrap[data-interactive="true"] canvas {
+  touch-action: none;
+}

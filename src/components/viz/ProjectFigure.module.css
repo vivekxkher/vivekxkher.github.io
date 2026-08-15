@@ -1,0 +1,70 @@
+.figure {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.line {
+  fill: none;
+  stroke: var(--graphite-40);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  transition: stroke var(--dur-l) var(--ease-out-quart);
+}
+
+.lineBright {
+  stroke: var(--paper-dim);
+}
+
+.lineFaint {
+  stroke: var(--graphite-60);
+}
+
+.accent {
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.75;
+}
+
+.hatch {
+  fill: none;
+  stroke: var(--graphite-60);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.6;
+}
+
+.solid {
+  fill: rgba(236, 233, 227, 0.04);
+  stroke: none;
+}
+
+/* Drawn on reveal, as if the section were being set out. */
+.draw {
+  stroke-dasharray: var(--len, 400);
+  stroke-dashoffset: var(--len, 400);
+}
+
+:global([data-reveal][data-revealed]) .draw {
+  animation: drawIn 1.6s var(--ease-out-expo) forwards;
+  animation-delay: var(--draw-delay, 0ms);
+}
+
+@keyframes drawIn {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .draw {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+  :global([data-reveal][data-revealed]) .draw {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}

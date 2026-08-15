@@ -1,0 +1,38 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-grid);
+  pointer-events: none;
+  contain: strict;
+}
+
+.inner {
+  height: 100%;
+  width: 100%;
+  max-width: var(--max-page);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.col {
+  border-left: 1px solid var(--hairline-faint);
+  height: 100%;
+}
+
+.col:last-child {
+  border-right: 1px solid var(--hairline-faint);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .overlay {
+    display: none;
+  }
+}

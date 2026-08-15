@@ -1,0 +1,99 @@
+.plane {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--blue-bright) 0 5px,
+    transparent 5px 10px
+  );
+  transition: left var(--dur-l) var(--ease-out-expo);
+}
+
+.planeLabel {
+  position: absolute;
+  top: var(--space-s);
+  left: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--blue-bright);
+  white-space: nowrap;
+}
+
+.side {
+  position: absolute;
+  bottom: var(--space-s);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.sideLeft {
+  left: var(--space-m);
+}
+
+.sideRight {
+  right: var(--space-m);
+  align-items: flex-end;
+  text-align: right;
+}
+
+.sideName {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--graphite-30);
+}
+
+.sideValue {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--paper);
+  font-variant-numeric: tabular-nums;
+}
+
+.drift {
+  position: absolute;
+  top: var(--space-s);
+  right: var(--space-m);
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--graphite-40);
+}
+
+.verdict {
+  position: absolute;
+  bottom: var(--space-s);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--hairline-strong);
+  background: rgba(5, 6, 7, 0.6);
+}
+
+.verdictSafe {
+  color: var(--graphite-20);
+}
+
+.verdictRisk {
+  color: var(--blue-bright);
+  border-color: var(--blue-line);
+}
+
+@media (max-width: 700px) {
+  .verdict,
+  .drift {
+    display: none;
+  }
+}

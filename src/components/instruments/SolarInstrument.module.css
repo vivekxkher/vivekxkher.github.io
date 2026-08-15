@@ -1,0 +1,56 @@
+.readout {
+  position: absolute;
+  top: var(--space-s);
+  left: var(--space-m);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+}
+
+.term {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--graphite-30);
+  min-width: 5.5rem;
+}
+
+.value {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--paper);
+  font-variant-numeric: tabular-nums;
+}
+
+.state {
+  position: absolute;
+  bottom: var(--space-s);
+  left: var(--space-m);
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--graphite-30);
+}
+
+.stateUp {
+  color: var(--blue-bright);
+}
+
+.compass {
+  position: absolute;
+  bottom: var(--space-s);
+  right: var(--space-m);
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--graphite-40);
+}

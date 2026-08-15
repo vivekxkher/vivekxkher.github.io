@@ -1,0 +1,28 @@
+# Netlify / Cloudflare Pages header rules. Ignored by hosts that do not read
+# this file, so it is safe to ship everywhere.
+
+# Next writes a content hash into every filename under _next/static, so these
+# can be cached forever — a changed file gets a new name.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts are hashed too.
+/_next/static/media/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Social cards change only on redeploy.
+/*.png
+  Cache-Control: public, max-age=604800
+
+# HTML must revalidate, or a redeploy will not reach anyone holding a cached copy.
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Sensible baseline protections for a static brochure site.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN

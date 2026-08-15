@@ -1,0 +1,133 @@
+/* ============================================================
+   PÉCLET — design tokens
+   One source of truth for colour, type, space, motion, layout.
+   ============================================================ */
+
+:root {
+  /* ---------- Surface: near-black through graphite ---------- */
+  --void: #050607;
+  --ink: #0a0b0d;
+  --ink-raised: #0f1114;
+  --graphite-90: #15181c;
+  --graphite-80: #1d2126;
+  --graphite-70: #282d33;
+  --graphite-60: #363c43;
+  /* Structural only — borders and marks, never text. */
+  --graphite-50: #464d55;
+  /*
+   * Everything from here up is safe for text on --ink at 4.5:1 or better.
+   * If a value in this range is darkened, check it against the background it
+   * actually lands on: several of these sit on --bg-deep, which is darker.
+   */
+  --graphite-40: #79818b;
+  --graphite-30: #949ca4;
+  --graphite-20: #b2b8bf;
+
+  /* ---------- Warm white ---------- */
+  --paper: #ece9e3;
+  --paper-dim: #bfbbb3;
+  --paper-faint: #8b8880;
+
+  /* ---------- Restrained PÉCLET blue ---------- */
+  --blue: #4c7db8;
+  --blue-bright: #6c9fd6;
+  --blue-deep: #1c3550;
+  --blue-wash: rgba(76, 125, 184, 0.09);
+  --blue-line: rgba(76, 125, 184, 0.32);
+
+  /* ---------- Physics signal colours (visualisations only) ---------- */
+  --sig-heat: #c46a3a;
+  --sig-heat-hot: #e08b52;
+  --sig-cool: #3d7cbb;
+  --sig-vapour: #7f93a8;
+
+  /* ---------- Semantic ---------- */
+  --bg: var(--ink);
+  --bg-deep: var(--void);
+  --fg: var(--paper);
+  --fg-muted: var(--paper-faint);
+  --fg-dim: var(--graphite-30);
+  --hairline: rgba(236, 233, 227, 0.09);
+  --hairline-strong: rgba(236, 233, 227, 0.18);
+  --hairline-faint: rgba(236, 233, 227, 0.045);
+  --focus: var(--blue-bright);
+
+  /* ---------- Type ---------- */
+  --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", Menlo,
+    monospace;
+
+  --step--2: clamp(0.625rem, 0.605rem + 0.1vw, 0.6875rem);
+  --step--1: clamp(0.75rem, 0.725rem + 0.125vw, 0.8125rem);
+  --step-0: clamp(0.9375rem, 0.9rem + 0.19vw, 1.0625rem);
+  --step-1: clamp(1.0625rem, 0.99rem + 0.38vw, 1.3125rem);
+  --step-2: clamp(1.3125rem, 1.16rem + 0.75vw, 1.875rem);
+  --step-3: clamp(1.625rem, 1.32rem + 1.5vw, 2.625rem);
+  --step-4: clamp(2.125rem, 1.55rem + 2.9vw, 4rem);
+  --step-5: clamp(2.75rem, 1.5rem + 6.25vw, 6.5rem);
+  --step-6: clamp(3.25rem, 0.85rem + 12vw, 11rem);
+
+  --tracking-display: -0.035em;
+  --tracking-tight: -0.018em;
+  --tracking-normal: 0;
+  --tracking-label: 0.16em;
+  --tracking-wide: 0.28em;
+
+  --leading-display: 0.9;
+  --leading-tight: 1.06;
+  --leading-snug: 1.28;
+  --leading-body: 1.62;
+
+  /* ---------- Space ---------- */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2.25rem;
+  --space-xl: 3.5rem;
+  --space-2xl: 5.5rem;
+  --space-3xl: 6rem;
+  /*
+   * Section padding. Two adjacent sections each contribute this, so the gap a
+   * reader actually sees is double the value — keep that in mind before
+   * raising it. At 1440 this reads as roughly 160px between sections.
+   */
+  --space-4xl: clamp(3rem, 5.5vw, 5rem);
+
+  /* ---------- Layout ---------- */
+  --gutter: clamp(1.25rem, 4.5vw, 3.5rem);
+  --measure: 62ch;
+  --measure-tight: 46ch;
+  --max-page: 1680px;
+  --nav-h: 4.5rem;
+
+  /* ---------- Motion ---------- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-linear: linear;
+  --dur-xs: 160ms;
+  --dur-s: 260ms;
+  --dur-m: 440ms;
+  --dur-l: 760ms;
+  --dur-xl: 1200ms;
+
+  /* ---------- Depth ---------- */
+  --z-canvas: 0;
+  --z-grid: 1;
+  --z-content: 2;
+  --z-nav: 60;
+  --z-overlay: 80;
+  --z-preloader: 100;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-xs: 1ms;
+    --dur-s: 1ms;
+    --dur-m: 1ms;
+    --dur-l: 1ms;
+    --dur-xl: 1ms;
+  }
+}

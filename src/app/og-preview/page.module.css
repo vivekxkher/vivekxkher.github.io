@@ -1,0 +1,227 @@
+/*
+ * The social card, at exactly 1200 × 630.
+ *
+ * Rendered as a real page and screenshotted, rather than composed with
+ * next/og. That way the card uses the same fonts, tokens and section motif as
+ * the site itself instead of a second, drifting definition of the brand.
+ */
+
+.card {
+  position: relative;
+  width: 1200px;
+  height: 630px;
+  overflow: hidden;
+  background: var(--void);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 56px 64px;
+  box-sizing: border-box;
+}
+
+/* Structural grid, as on the site */
+.grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 0 64px;
+}
+
+.grid span {
+  border-left: 1px solid rgba(236, 233, 227, 0.05);
+}
+
+.grid span:last-child {
+  border-right: 1px solid rgba(236, 233, 227, 0.05);
+}
+
+/* The envelope section, abstracted to a band of hatched layers */
+.section {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 52%;
+  display: flex;
+  opacity: 1;
+}
+
+.layer {
+  height: 100%;
+  border-left: 1px solid rgba(236, 233, 227, 0.16);
+}
+
+.layer:last-child {
+  border-right: 1px solid rgba(236, 233, 227, 0.16);
+}
+
+.hatchBatt {
+  background-image: repeating-linear-gradient(
+    38deg,
+    transparent 0 7px,
+    rgba(236, 233, 227, 0.1) 7px 8px
+  );
+}
+
+.hatchAggregate {
+  background-image: radial-gradient(
+    circle at center,
+    rgba(236, 233, 227, 0.18) 0.7px,
+    transparent 0.8px
+  );
+  background-size: 9px 9px;
+}
+
+.hatchSheet {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0 3px,
+    rgba(236, 233, 227, 0.14) 3px 4px
+  );
+}
+
+/* A warm-to-cool wash, standing in for the thermal gradient */
+.wash {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      70% 90% at 62% 45%,
+      rgba(196, 106, 58, 0.16) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      60% 80% at 96% 55%,
+      rgba(76, 125, 184, 0.14) 0%,
+      transparent 65%
+    );
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    var(--void) 30%,
+    rgba(5, 6, 7, 0.82) 48%,
+    rgba(5, 6, 7, 0.18) 100%
+  );
+}
+
+/* ---------- Content ---------- */
+
+.top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--graphite-30);
+}
+
+.readout {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue-bright);
+}
+
+.rule {
+  position: relative;
+  z-index: 2;
+  height: 1px;
+  background: rgba(236, 233, 227, 0.14);
+  margin-top: 18px;
+}
+
+.middle {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 780px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-stretch: 114%;
+  font-size: 84px;
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--paper);
+  margin: 0;
+}
+
+.titleSmall {
+  font-size: 66px;
+}
+
+.standfirst {
+  margin-top: 26px;
+  font-size: 21px;
+  line-height: 1.42;
+  color: var(--paper-dim);
+  max-width: 30ch;
+}
+
+.bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(236, 233, 227, 0.14);
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.mark {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-stretch: 118%;
+  font-size: 30px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--paper);
+  line-height: 1;
+}
+
+.tagline {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--graphite-30);
+}
+
+.formula {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--graphite-40);
+}
+
+.formula em {
+  font-style: normal;
+  color: var(--blue-bright);
+}

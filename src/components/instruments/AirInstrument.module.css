@@ -1,0 +1,106 @@
+.overlaySvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.solid {
+  fill: rgba(8, 10, 12, 0.55);
+  stroke: rgba(236, 233, 227, 0.42);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.opening {
+  fill: none;
+  stroke: rgba(236, 233, 227, 0.28);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  vector-effect: non-scaling-stroke;
+}
+
+.ground {
+  stroke: rgba(236, 233, 227, 0.22);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.windDial {
+  position: absolute;
+  top: var(--space-s);
+  right: var(--space-m);
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.dialRing {
+  fill: none;
+  stroke: var(--hairline-strong);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.dialArrow {
+  stroke: var(--blue-bright);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+  transition: transform var(--dur-m) var(--ease-out-quart);
+  transform-origin: 50px 50px;
+}
+
+.dialLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  fill: var(--graphite-40);
+  text-anchor: middle;
+}
+
+.readout {
+  position: absolute;
+  top: var(--space-s);
+  left: var(--space-m);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.term {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--graphite-30);
+}
+
+.value {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--paper);
+}
+
+.zones {
+  position: absolute;
+  bottom: var(--space-s);
+  left: var(--space-m);
+  right: var(--space-m);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-m);
+}
+
+.zoneNote {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--graphite-40);
+}
+
+@media (max-width: 700px) {
+  .windDial,
+  .zones {
+    display: none;
+  }
+}

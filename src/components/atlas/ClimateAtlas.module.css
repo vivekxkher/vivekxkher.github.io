@@ -1,0 +1,301 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-l);
+  }
+}
+
+/* ---------- Plot ---------- */
+
+.plotWrap {
+  position: sticky;
+  top: calc(var(--nav-h) + 1.5rem);
+  border: 1px solid var(--hairline);
+  background: var(--bg-deep);
+  padding: var(--space-m);
+}
+
+@media (max-width: 980px) {
+  .plotWrap {
+    position: static;
+  }
+}
+
+.plotHead {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem var(--space-m);
+  align-items: baseline;
+  padding-bottom: var(--space-s);
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: var(--space-s);
+}
+
+.plot {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.graticule {
+  stroke: var(--hairline-faint);
+  stroke-width: 0.5;
+  fill: none;
+}
+
+.city {
+  transition:
+    fill var(--dur-m) var(--ease-out-quart),
+    opacity var(--dur-m) var(--ease-out-quart),
+    r var(--dur-m) var(--ease-out-expo);
+  cursor: pointer;
+}
+
+.cityDim {
+  opacity: 0.38;
+}
+
+.cityLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  fill: var(--paper);
+  pointer-events: none;
+}
+
+.cityLabelBg {
+  fill: var(--void);
+  opacity: 0.82;
+}
+
+.axisLabel {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  fill: var(--graphite-50);
+}
+
+.plotFoot {
+  margin-top: var(--space-s);
+  padding-top: var(--space-s);
+  border-top: 1px solid var(--hairline);
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--graphite-40);
+  line-height: 1.7;
+}
+
+/* ---------- Zone selector ---------- */
+
+.zones {
+  border-top: 1px solid var(--hairline);
+}
+
+.zone {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr) auto;
+  gap: var(--space-s);
+  align-items: center;
+  text-align: left;
+  padding-block: clamp(0.85rem, 2vw, 1.15rem);
+  border-bottom: 1px solid var(--hairline);
+  color: var(--graphite-20);
+  transition: color var(--dur-s) var(--ease-out-quart);
+}
+
+.zone:hover {
+  color: var(--paper);
+}
+
+.zone[aria-expanded="true"] {
+  color: var(--paper);
+}
+
+.zoneIndex {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  color: var(--graphite-40);
+}
+
+.zoneName {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-stretch: 110%;
+  font-size: var(--step-2);
+  line-height: 1;
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+}
+
+.zoneCount {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: var(--tracking-label);
+  color: var(--graphite-40);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.swatch {
+  width: 10px;
+  height: 10px;
+  flex: none;
+}
+
+/* ---------- Detail ---------- */
+
+.detail {
+  padding-block: var(--space-l) var(--space-xl);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.criterion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem var(--space-m);
+  align-items: baseline;
+  padding-bottom: var(--space-s);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.criterionValue {
+  font-size: var(--step--1);
+  color: var(--paper-dim);
+}
+
+.lede {
+  font-size: var(--step-1);
+  line-height: 1.4;
+  letter-spacing: var(--tracking-tight);
+  color: var(--paper);
+  margin-top: var(--space-m);
+  max-width: 34ch;
+  text-wrap: balance;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: var(--space-m);
+  margin-top: var(--space-l);
+  padding-top: var(--space-m);
+  border-top: 1px solid var(--hairline);
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.factTerm {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--graphite-40);
+}
+
+.factValue {
+  font-size: var(--step--1);
+  color: var(--paper);
+  line-height: 1.4;
+}
+
+.prose {
+  margin-top: var(--space-l);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-l);
+  margin-top: var(--space-xl);
+}
+
+@media (max-width: 700px) {
+  .columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.columnHead {
+  padding-bottom: var(--space-2xs);
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: var(--space-s);
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 1.75rem minmax(0, 1fr);
+  gap: 0.6rem;
+  padding-block: 0.55rem;
+  border-bottom: 1px solid var(--hairline);
+  font-size: var(--step--1);
+  color: var(--paper-dim);
+  line-height: 1.5;
+}
+
+.stepNum {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  color: var(--graphite-40);
+  padding-top: 0.12rem;
+}
+
+.pitfall {
+  display: grid;
+  grid-template-columns: 1.75rem minmax(0, 1fr);
+  gap: 0.6rem;
+  padding-block: 0.55rem;
+  border-bottom: 1px solid var(--hairline);
+  font-size: var(--step--1);
+  color: var(--paper-dim);
+  line-height: 1.5;
+}
+
+.pitfallMark {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--sig-heat);
+  padding-top: 0.05rem;
+}
+
+/* ---------- City list ---------- */
+
+.cityList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.9rem;
+  margin-top: var(--space-m);
+}
+
+.cityName {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite-30);
+  transition: color var(--dur-s) var(--ease-out-quart);
+  cursor: default;
+}
+
+.cityName:hover {
+  color: var(--paper);
+}

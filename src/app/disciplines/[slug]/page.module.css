@@ -1,0 +1,125 @@
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-m) var(--space-xl);
+  margin-top: var(--space-l);
+  padding-top: var(--space-m);
+  border-top: 1px solid var(--hairline);
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metaTerm {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--graphite-40);
+}
+
+.metaValue {
+  font-size: var(--step-0);
+  color: var(--paper);
+}
+
+.instrumentWrap {
+  padding-block: var(--space-l) var(--space-2xl);
+}
+
+.body {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--space-xl);
+  align-items: start;
+  padding-bottom: var(--space-2xl);
+}
+
+@media (max-width: 900px) {
+  .body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-l);
+  }
+}
+
+.columnHead {
+  padding-bottom: var(--space-2xs);
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: var(--space-m);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.listItem {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: var(--space-s);
+  padding-block: 0.7rem;
+  border-bottom: 1px solid var(--hairline);
+  font-size: var(--step--1);
+  color: var(--paper-dim);
+  line-height: 1.5;
+}
+
+.listNum {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  color: var(--graphite-40);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.15rem;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-xl);
+}
+
+@media (max-width: 700px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-l);
+  }
+}
+
+/* ---------- Pagination ---------- */
+
+.pager {
+  border-top: 1px solid var(--hairline);
+  padding-block: var(--space-2xl);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-l);
+  justify-content: space-between;
+}
+
+.pagerLink {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.pagerLinkEnd {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.pagerTitle {
+  font-size: var(--step-2);
+  color: var(--paper);
+  transition: transform var(--dur-m) var(--ease-out-expo);
+}
+
+.pagerLink:hover .pagerTitle {
+  transform: translateX(-0.35rem);
+}
+
+.pagerLinkEnd:hover .pagerTitle {
+  transform: translateX(0.35rem);
+}

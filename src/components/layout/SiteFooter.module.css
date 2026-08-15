@@ -1,0 +1,134 @@
+.footer {
+  position: relative;
+  z-index: var(--z-content);
+  border-top: 1px solid var(--hairline);
+  background: var(--void);
+  padding-top: var(--space-2xl);
+  overflow: hidden;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+  gap: var(--space-xl) var(--space-m);
+  padding-bottom: var(--space-2xl);
+}
+
+@media (max-width: 900px) {
+  .top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-l);
+  }
+}
+
+.statement {
+  max-width: 30ch;
+}
+
+.statementText {
+  font-size: var(--step-2);
+  line-height: 1.18;
+  letter-spacing: var(--tracking-tight);
+  color: var(--paper);
+  margin-top: var(--space-s);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: var(--space-m);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--blue-bright);
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--blue-line);
+  transition: border-color var(--dur-s) var(--ease-out-quart);
+}
+
+.cta:hover {
+  border-bottom-color: var(--blue-bright);
+}
+
+.colTitle {
+  padding-bottom: var(--space-s);
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: var(--space-s);
+}
+
+.colList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.colLink {
+  font-size: var(--step--1);
+  color: var(--graphite-20);
+  transition: color var(--dur-s) var(--ease-out-quart);
+  width: fit-content;
+}
+
+.colLink:hover {
+  color: var(--paper);
+}
+
+.colText {
+  font-size: var(--step--1);
+  color: var(--graphite-30);
+  line-height: 1.5;
+}
+
+/* ---------- Oversized wordmark ---------- */
+
+.wordmark {
+  display: block;
+  width: 100%;
+  /* Quiet, but still above the 3:1 large-text threshold — a ghosted wordmark
+     is decorative to us and is text to everyone reading the page. */
+  color: #575e67;
+  margin-bottom: -0.06em;
+  user-select: none;
+}
+
+.wordmarkText {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-stretch: 118%;
+  font-size: clamp(3.5rem, 17.5vw, 16rem);
+  line-height: 0.78;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  display: block;
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-l);
+  align-items: baseline;
+  justify-content: space-between;
+  padding-block: var(--space-s) var(--space-m);
+  border-top: 1px solid var(--hairline);
+}
+
+.formula {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.06em;
+  color: var(--graphite-40);
+}
+
+.formula em {
+  font-style: normal;
+  color: var(--blue);
+}

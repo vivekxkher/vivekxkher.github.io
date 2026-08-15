@@ -1,0 +1,176 @@
+/* Each discipline gets its own motion signature. Nothing moves until the
+   row is hovered or focused, and nothing moves at all under reduced motion. */
+
+.glyph {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.stroke {
+  stroke: var(--graphite-40);
+  stroke-width: 1;
+  fill: none;
+  vector-effect: non-scaling-stroke;
+  transition: stroke var(--dur-m) var(--ease-out-quart);
+}
+
+.fill {
+  fill: var(--graphite-40);
+  transition: fill var(--dur-m) var(--ease-out-quart);
+}
+
+:global(.is-live) .stroke {
+  stroke: var(--paper-dim);
+}
+:global(.is-live) .fill {
+  fill: var(--paper-dim);
+}
+
+/* ---------- 01 Thermal: a gradient crossing an assembly ---------- */
+
+.thermalTick {
+  opacity: 0.35;
+}
+
+:global(.is-live) .thermalTick {
+  animation: thermalPulse 2.4s var(--ease-in-out-quart) infinite;
+  animation-delay: calc(var(--i) * 70ms);
+}
+
+@keyframes thermalPulse {
+  0%,
+  100% {
+    opacity: 0.22;
+  }
+  35% {
+    opacity: 1;
+  }
+}
+
+/* ---------- 02 Solar: an arc travelled once a day ---------- */
+
+.solarArm {
+  transform-origin: 60px 34px;
+  transform: rotate(-64deg);
+}
+
+:global(.is-live) .solarArm {
+  animation: solarSweep 4.2s var(--ease-in-out-quart) infinite;
+}
+
+@keyframes solarSweep {
+  0% {
+    transform: rotate(-64deg);
+  }
+  50% {
+    transform: rotate(64deg);
+  }
+  100% {
+    transform: rotate(-64deg);
+  }
+}
+
+/* ---------- 03 Air: streaming lanes ---------- */
+
+.airLane {
+  opacity: 0.5;
+}
+
+:global(.is-live) .airLane {
+  animation: airStream 1.9s var(--ease-linear) infinite;
+  animation-delay: calc(var(--i) * -0.5s);
+}
+
+@keyframes airStream {
+  0% {
+    transform: translateX(-26px);
+    opacity: 0;
+  }
+  22%,
+  72% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateX(26px);
+    opacity: 0;
+  }
+}
+
+/* ---------- 04 Moisture: a slow random walk ---------- */
+
+.moistureDot {
+  opacity: 0.45;
+}
+
+:global(.is-live) .moistureDot {
+  animation: moistureWalk 5.5s var(--ease-in-out-quart) infinite alternate;
+  animation-delay: calc(var(--i) * -0.42s);
+}
+
+@keyframes moistureWalk {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(9px, -5px);
+    opacity: 0.4;
+  }
+}
+
+/* ---------- 05 Daylight: an aperture opening ---------- */
+
+.daylightWedge {
+  transform-origin: 22px 8px;
+  opacity: 0.3;
+}
+
+:global(.is-live) .daylightWedge {
+  animation: daylightOpen 4s var(--ease-in-out-quart) infinite alternate;
+}
+
+@keyframes daylightOpen {
+  0% {
+    transform: scaleX(0.55);
+    opacity: 0.22;
+  }
+  100% {
+    transform: scaleX(1.15);
+    opacity: 0.75;
+  }
+}
+
+/* ---------- 06 Energy: a balance re-proportioning ---------- */
+
+.energyBar {
+  transform-origin: 0 34px;
+}
+
+:global(.is-live) .energyBar {
+  animation: energyBalance 3.4s var(--ease-in-out-quart) infinite alternate;
+  animation-delay: calc(var(--i) * -0.7s);
+}
+
+@keyframes energyBalance {
+  0% {
+    transform: scaleY(0.32);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :global(.is-live) .thermalTick,
+  :global(.is-live) .solarArm,
+  :global(.is-live) .airLane,
+  :global(.is-live) .moistureDot,
+  :global(.is-live) .daylightWedge,
+  :global(.is-live) .energyBar {
+    animation: none;
+  }
+}

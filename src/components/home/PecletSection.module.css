@@ -1,0 +1,221 @@
+.section {
+  position: relative;
+  z-index: var(--z-content);
+  padding-block: var(--space-4xl);
+  background: var(--bg);
+}
+
+.lead {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--space-m);
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .lead {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.leadTitle {
+  font-size: var(--step-3);
+  color: var(--paper);
+  max-width: 16ch;
+}
+
+.leadBody {
+  max-width: var(--measure);
+}
+
+/* ---------- Instrument ---------- */
+
+.instrument {
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+  border: 1px solid var(--hairline);
+  background: var(--bg-deep);
+}
+
+.stage {
+  position: relative;
+  height: clamp(13rem, 30vh, 20rem);
+  overflow: hidden;
+  /* Carriers arrive and leave rather than stopping at a hard edge. */
+  --edge: linear-gradient(
+    to right,
+    transparent,
+    #000 7%,
+    #000 93%,
+    transparent
+  );
+  -webkit-mask-image: var(--edge);
+  mask-image: var(--edge);
+}
+
+.stageLabels {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--space-s) var(--space-m);
+  pointer-events: none;
+}
+
+.mode {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: opacity var(--dur-m) var(--ease-out-quart);
+}
+
+.modeRight {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.modeGlyph {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.4em;
+  color: var(--blue-bright);
+}
+
+.modeRight .modeGlyph {
+  color: var(--paper-dim);
+}
+
+.modeName {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--paper);
+}
+
+.modeNote {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--graphite-20);
+  max-width: 18ch;
+  line-height: 1.7;
+}
+
+/* ---------- Control ---------- */
+
+.control {
+  border-top: 1px solid var(--hairline);
+  padding: var(--space-m);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-s) var(--space-l);
+  align-items: center;
+}
+
+@media (max-width: 620px) {
+  .control {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.sliderRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sliderLabel {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-s);
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 1.5rem;
+  background: transparent;
+  cursor: ew-resize;
+  margin: 0;
+}
+
+.slider::-webkit-slider-runnable-track {
+  height: 1px;
+  background: var(--hairline-strong);
+}
+
+.slider::-moz-range-track {
+  height: 1px;
+  background: var(--hairline-strong);
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2px;
+  height: 1.5rem;
+  margin-top: -0.75rem;
+  background: var(--paper);
+  border: none;
+  border-radius: 0;
+}
+
+.slider::-moz-range-thumb {
+  width: 2px;
+  height: 1.5rem;
+  background: var(--paper);
+  border: none;
+  border-radius: 0;
+}
+
+.slider:focus-visible::-webkit-slider-thumb {
+  background: var(--blue-bright);
+  box-shadow: 0 0 0 4px var(--blue-wash);
+}
+
+.readout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: flex-end;
+  min-width: 13rem;
+}
+
+@media (max-width: 620px) {
+  .readout {
+    align-items: flex-start;
+  }
+}
+
+.readoutValue {
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  color: var(--paper);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.readoutValue em {
+  font-style: normal;
+  color: var(--blue);
+}
+
+.readoutVerdict {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--graphite-30);
+}
+
+.caption {
+  margin-top: var(--space-m);
+  font-size: var(--step--1);
+  color: var(--graphite-30);
+  max-width: 62ch;
+  line-height: 1.6;
+}
