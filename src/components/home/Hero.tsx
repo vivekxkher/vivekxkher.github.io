@@ -135,7 +135,7 @@ export function Hero() {
             <div className={styles.opening}>
               <h1 id="hero-title" className={styles.openingMark}>
                 PÉCLET
-                <span className={styles.openingSub}>Building Physics</span>
+                <span className={styles.openingSub}>Climate Design</span>
               </h1>
               <p className={styles.openingHint} aria-hidden="true">
                 Move to disturb the field
