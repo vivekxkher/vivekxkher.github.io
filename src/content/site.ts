@@ -20,8 +20,8 @@ export const site = {
    * Nothing here is presented on the site as a verified credential.
    */
   contact: {
-    email: "hello@péclet.com",
-    emailHref: "mailto:hello@péclet.com",
+    email: "hello@peclet.co",
+    emailHref: "mailto:hello@peclet.co",
     location: "Practice location to be confirmed",
   },
 } as const;
