@@ -68,14 +68,14 @@ export function SiteFooter() {
 
       <div className="shell">
         <div className={styles.wordmark} aria-hidden="true">
-          <span className={styles.wordmarkText}>{site.name}</span>
+          <span className={styles.wordmarkText} style={{ textTransform: "none" }}>{site.name}</span>
         </div>
       </div>
 
       <div className="shell">
         <div className={styles.bottom}>
           <span className="label">
-            &copy; {year} {site.name} — {site.tagline}
+            &copy; {year} <span style={{ textTransform: "none" }}>{site.name}</span> — {site.tagline}
           </span>
           <span className={styles.formula}>
             <em>Pe</em> = advection / diffusion = uL / D
