@@ -87,8 +87,8 @@ export function SiteHeader() {
           {/* No aria-label: the accessible name is the visible text, which is
               what keeps voice control and the label/name check happy. */}
           <Link href="/" className={styles.brand}>
-            <span className={styles.mark}>{site.name}</span>
-            <span className={styles.markSub}>{pathname === "/" ? site.practice : site.discipline}</span>
+            <span className={styles.mark} style={{ textTransform: "none" }}>{site.name}</span>
+            <span className={styles.markSub}>{site.tagline}</span>
           </Link>
 
           <nav className={styles.nav} aria-label="Primary">
