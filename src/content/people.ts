@@ -28,11 +28,11 @@ export interface Person {
 
 export const founder: Person = {
   name: "Vivek Kher",
-  role: "Founder",
+  role: "Founder & Climate Designer",
   standfirst:
     "Building physics, and the conviction that a building’s behaviour is decided long before anyone specifies a system.",
   bio: [
-    "Vivek Kher founded PÉCLET to work on the part of a project that decides how a building will actually perform: the envelope, the openings, the orientation, and the order those decisions are taken in.",
+    "Vivek Kher is a climate designer and the founder of PÉCLET. His work focuses on how early decisions about orientation, openings and the building envelope shape a building’s performance.",
     "He is a Certified Passive House Designer, and practised in New York on Passive House projects before establishing the studio. That work is where the practice’s bias comes from — reduce demand through form and fabric first, verify with a consistent calculation, and do not let a system specification paper over a geometry problem.",
     "The interest now is in what that discipline becomes when it is re-derived for Indian climates rather than imported wholesale. The method travels. The targets, and the resources each climate offers, do not.",
   ],
