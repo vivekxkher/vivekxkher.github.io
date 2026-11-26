@@ -88,7 +88,7 @@ export function SiteHeader() {
               what keeps voice control and the label/name check happy. */}
           <Link href="/" className={styles.brand}>
             <span className={styles.mark}>{site.name}</span>
-            <span className={styles.markSub}>{site.discipline}</span>
+            <span className={styles.markSub}>{pathname === "/" ? site.practice : site.discipline}</span>
           </Link>
 
           <nav className={styles.nav} aria-label="Primary">
