@@ -4,16 +4,16 @@
  */
 
 export const site = {
-  name: "PÉCLET",
+  name: "péclet haus",
   /** Used where diacritics are unsafe (aria labels read fine either way). */
-  nameAscii: "PECLET",
+  nameAscii: "peclet haus",
   discipline: "Building Physics",
   practice: "Climate Design",
   tagline: "Building Physics | Climate Design",
   /** IDN. `new URL()` normalises this to its punycode form for canonicals. */
   url: "https://péclet.com",
   description:
-    "PÉCLET is a building physics and climate design practice. We study how buildings exchange heat, light, air and moisture with their climate, and translate those interactions into design decisions.",
+    "péclet haus is a building physics and climate design practice. We study how buildings exchange heat, light, air and moisture with their climate, and translate those interactions into design decisions.",
   locale: "en",
   /**
    * PLACEHOLDER — replace with real practice details before launch.
