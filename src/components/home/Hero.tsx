@@ -8,6 +8,7 @@ import {
 } from "@/components/viz/ThermalField";
 import { usePointerField } from "@/components/viz/shared/usePointerField";
 import { VizCanvas } from "@/components/viz/shared/VizCanvas";
+import { site } from "@/content/site";
 import styles from "./Hero.module.css";
 
 type Phase = "opening" | "section" | "reveal";
@@ -133,9 +134,9 @@ export function Hero() {
             </div>
 
             <div className={styles.opening}>
-              <h1 id="hero-title" className={styles.openingMark}>
-                PÉCLET
-                <span className={styles.openingSub}>Climate Design</span>
+              <h1 id="hero-title" className={styles.openingMark} style={{ textTransform: "none" }}>
+                {site.name}
+                <span className={styles.openingSub}>{site.tagline}</span>
               </h1>
               <p className={styles.openingHint} aria-hidden="true">
                 Move to disturb the field
