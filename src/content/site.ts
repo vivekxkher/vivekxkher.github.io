@@ -22,7 +22,7 @@ export const site = {
   contact: {
     email: "hello@peclet.co",
     emailHref: "mailto:hello@peclet.co",
-    location: "Practice location to be confirmed",
+    location: "Péclet Haus, Sindhubhavan Road, PRL Colony, Thaltej, Ahmedabad, Gujarat 380059",
   },
 } as const;
 
